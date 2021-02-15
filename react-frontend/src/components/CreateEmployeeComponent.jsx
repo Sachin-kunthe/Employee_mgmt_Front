@@ -24,13 +24,19 @@ class CreateEmployeeComponent extends Component {
     { 
         e.preventDefault();  
         let employee ={firstName: this.state.firstName, lastName: this.state.lastName, emailID: this.state.emailID};
-        console.log('employee =>' + JSON.stringify(employee));
+        console.log('employee =>' + JSON.stringify(employee)); 
+
+    
+
+
 
         EmployeeService.createEmployee(employee).then(res=>{
             this.props.history.push('/employees');
          
         });
     }
+
+    
     
     changeFirstNameHandler= (event) => {
         this.setState ({firstName: event.target.value});
